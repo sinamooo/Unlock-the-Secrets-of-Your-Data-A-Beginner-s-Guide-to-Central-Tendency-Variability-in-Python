@@ -1,0 +1,111 @@
+Python Descriptive Statistics – Central Tendency in Python
+
+import statistics as st
+from fractions import Fraction as fr
+
+a. mean() - Calculates the arithmetic average
+nums = [25, 26, 27, 28, 29, 30]
+st.mean(nums)
+# Output: 27.5
+
+st.mean([-4, -6, 9])
+# Output: -0.3333333333333333
+
+st.mean((fr(3, 4), fr(5, 7), fr(2, 1)))
+# Output: Fraction(97, 84)
+
+st.mean({4: "four", 2: "two", 9: "nine"})
+# Output: 5
+
+b. mode() - Returns the most frequent value
+nums_b = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+st.mode(nums_b)
+# Output: 9
+
+st.mode(['N', 'S', 's', 'S', 'N', 'S'])
+# Output: 'S'
+
+c. median() - Finds the middle point
+st.median(nums_b)
+# Output: 5
+
+d. harmonic_mean()
+st.harmonic_mean([4, 6, 9.8])
+# Output: 5.783606557377049
+
+e. median_low()
+st.median_low([4, 5, 6])
+# Output: 5
+st.median_low([4, 5, 6, 7])
+# Output: 5
+
+f. median_high()
+st.median_high([4, 5, 6])
+# Output: 5
+st.median_high([4, 5, 6, 7])
+# Output: 6
+
+g. median_grouped()
+st.median_grouped([2, 5, 5, 4, 8], interval=1)
+# Output: 4.75
+st.median_grouped([2, 5, 5, 4, 8], interval=2)
+# Output: 4.5
+
+Python Descriptive Statistics – Dispersion in Python
+
+import statistics as st
+nums = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+a. variance()
+st.variance(nums)
+# Output: 7.5
+
+b. pvariance()
+st.pvariance(nums)
+# Output: 6.666666666666667
+
+c. stdev()
+st.stdev(nums)
+# Output: 2.7386127875258306
+
+d. pstdev()
+st.pstdev(nums)
+# Output: 2.581988897471611
+
+pandas with Descriptive Statistics in Python
+
+import pandas as pd
+nums = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+df = pd.DataFrame(nums)
+
+# Calculate Mean
+df.mean()
+# Output:
+0    5.0
+dtype: float64
+
+# Calculate Mode
+df.mode()
+# Output:
+    0
+ 0  1
+ 1  2
+ 2  3
+ 3  4
+ 4  5
+ 5  6
+ 6  7
+ 7  8
+ 8  9
+
+# Calculate Standard Deviation
+df.std()
+# Output:
+ 0    2.738613
+ dtype: float64
+
+# Calculate Skewness - Note: A value between -1 and 1 is symmetric
+df.skew()
+# Output:
+0    0.0
+dtype: float64
